@@ -4,6 +4,10 @@ import (
 	"math"
 )
 
+func Yn(n int, x float64) float64{
+	return math.Yn(n ,x)
+}
+
 func Sqrt(x float64) float64 {
 	return math.Sqrt(x)
 }
