@@ -1,6 +1,9 @@
 package mymath
 
-import "testing"
+import (
+	"math"
+	"testing"
+)
 
 func TestCeil(t *testing.T) {
 	type args struct {
@@ -105,6 +108,26 @@ func TestPow(t *testing.T) {
 	}
 }
 
+func TestAbs(t *testing.T) {
+	type args struct {
+		x float64
+	}
+	tests := []struct {
+		name string
+		args args
+		want float64
+	}{
+		{name: "1", args: args{-10.0}, want: 10.0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Abs(tt.args.x); got != tt.want {
+				t.Errorf("Pow() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 func TestSqrt(t *testing.T) {
 	type args struct {
 		x float64
@@ -119,6 +142,27 @@ func TestSqrt(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if got := Sqrt(tt.args.x); got != tt.want {
+				t.Errorf("Sqrt() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
+func TestYn(t *testing.T) {
+	type args struct {
+		x int
+		y float64
+	}
+	tests := []struct {
+		name string
+		args args
+		want float64
+	}{
+		{name: "1", args: args{1, math.Inf(1)}, want: 0},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := Yn(tt.args.x, tt.args.y); got != tt.want {
 				t.Errorf("Sqrt() = %v, want %v", got, tt.want)
 			}
 		})

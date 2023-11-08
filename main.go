@@ -4,8 +4,8 @@ import (
 	"math"
 )
 
-func Yn(n int, x float64) float64{
-	return math.Yn(n ,x)
+func Yn(n int, x float64) float64 {
+	return math.Yn(n, x)
 }
 
 func Sqrt(x float64) float64 {
@@ -27,4 +27,7 @@ func Pow(x, y float64) float64 {
 }
 func Min(x, y float64) float64 {
 	return math.Min(x, y)
+}
+func Abs(x float64) float64 {
+	return math.Abs(x)
 }
