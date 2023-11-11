@@ -1,6 +1,7 @@
 package mymath
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -30,4 +31,8 @@ func Min(x, y float64) float64 {
 }
 func Abs(x float64) float64 {
 	return math.Abs(x)
+}
+
+func TestingFunc() {
+	fmt.Println("Hello world!")
 }
